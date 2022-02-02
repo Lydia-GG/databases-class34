@@ -18,8 +18,9 @@ export const CREATE_AUTHORS_RESEARCHES_TAB = `
 CREATE TABLE authors_researches(
   author_no INT, 
   paper_id INT, 
-  PRIMARY KEY(author_no,paper_id)
-  )`;
+  PRIMARY KEY(author_no,paper_id),
+  FOREIGN KEY (author_no) REFERENCES authors(author_no),
+  FOREIGN KEY (paper_id) REFERENCES research_Papers(paper_id))`;
 
 export const INSERT_AUTHORS_RESEARCHES_ROWS = `
 INSERT INTO authors_researches VALUES ?`;
