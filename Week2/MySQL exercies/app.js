@@ -22,7 +22,7 @@ const databaseConfig = {
   host: 'localhost',
   user: 'hyfuser',
   password: 'hyfpassword',
-  database: 'researches',
+  // database: 'researches',
 };
 
 async function seedDatabase() {

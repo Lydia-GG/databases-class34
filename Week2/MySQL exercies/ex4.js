@@ -16,8 +16,7 @@ JOIN authors_researches
 ON authors.author_no = authors_researches.author_no 
 JOIN research_Papers 
 ON authors_researches.paper_id = research_Papers.paper_id 
-GROUP BY authors.gender 
-Having gender = 'f';`;
+WHERE gender = 'f';`;
 
 // Average of the h-index of all authors per university.
 export const H_INDEX_AVG = `
@@ -38,8 +37,4 @@ GROUP BY university;`;
 // Minimum and maximum of the h-index of all authors per university.
 export const MIN_MAX_INDEX = `SELECT MIN(h_index), MAX(h_index), university 
 FROM authors 
-JOIN authors_researches 
-ON authors.author_no = authors_researches.author_no
-JOIN research_Papers 
-ON authors_researches.paper_id = research_Papers.paper_id
 GROUP BY university; `;

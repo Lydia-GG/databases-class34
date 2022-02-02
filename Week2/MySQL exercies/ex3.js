@@ -3,7 +3,7 @@ SELECT A1.author_name AS Author,
 A2.author_name AS Mentor 
 FROM authors AS A1 
 INNER JOIN authors AS A2
-ON A1.author_no =A2.mentor;`;
+ON A1.mentor =A2.author_no;`;
 
 export const AUTHOR_PAPER_TITLE_QUERY = `
 SELECT authors.*, paper_title 
