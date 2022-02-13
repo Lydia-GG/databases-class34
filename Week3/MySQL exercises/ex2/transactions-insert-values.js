@@ -11,8 +11,8 @@ const connection = mysql.createConnection({
 const executeQuery = promisify(connection.query.bind(connection));
 
 const queries = [
-  `INSERT INTO account VALUES (102, 5000),(101, 3000),(120, 20000),(105, 7000),(150, 150000)`,
-  `INSERT INTO account_changes VALUES (105, 150, -2000, '2022-01-01', 'rent' ),(107, 105, 100, '2022-01-22', NULL),(101, 101, -200 ,'2022-01-11', 'Health Insurance'),(113, 150, 500, '2022-01-15', NULL),(117, 102, 150,'2022-01-22', NULL)`,
+  `INSERT INTO account (balance) VALUES (5000),(3000),(20000),(7000),(150000)`,
+  `INSERT INTO account_changes (account_number, amount, changed_date, remark) VALUES (102, -2000, '2022-01-01', 'rent' ),(104, 100, '2022-01-22', NULL),(101, -200 ,'2022-01-11', 'Health Insurance'),(103, 500, '2022-01-15', NULL),(102, 150,'2022-01-22', NULL)`,
 ];
 
 function insertRows() {

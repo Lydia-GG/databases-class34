@@ -13,14 +13,14 @@ client.connect(async (err) => {
   const collection = client.db('world').collection('city');
 
   const findByName = await collection
-    .find({
+    .findOne({
       Name: 'Kairo',
     })
     .toArray();
   console.log('\u001b[1;36m' + 'Found by name' + '\u001b[0m', findByName);
 
   const findByCountryCode = await collection
-    .find({
+    .findOne({
       CountryCode: 'Kai',
     })
     .toArray();
